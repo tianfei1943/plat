@@ -6,7 +6,7 @@
 	<!-- The definition of the Root Spring Container shared by all Servlets and Filters -->
 	<context-param>
 		<param-name>contextConfigLocation</param-name>
-		<param-value>classpath:spring*.xml</param-value>
+		<param-value>classpath:spring-base.xml</param-value>
 	</context-param>
 	
 	<!-- Creates the Spring Container shared by all Servlets and Filters -->
@@ -27,7 +27,27 @@
 		
 	<servlet-mapping>
 		<servlet-name>appServlet</servlet-name>
-		<url-pattern>/</url-pattern>
+		<url-pattern>*.action</url-pattern>
 	</servlet-mapping>
+	
+	
+	
+<!-- 	<filter>
+		<filter-name>b</filter-name>
+		<filter-class>com.tecpie.plat.filter.B</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>b</filter-name>
+		<url-pattern>/</url-pattern>
+	</filter-mapping>
+	
+	<filter>
+		<filter-name>a</filter-name>
+		<filter-class>com.tecpie.plat.filter.A</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>a</filter-name>
+		<url-pattern>/</url-pattern>
+	</filter-mapping> -->
 
 </web-app>

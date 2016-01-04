@@ -24,16 +24,6 @@ public class CollectsTest {
 		}
 		System.out.println("剩余人数："+list2);
 	}
-	
-	@Test
-	public void testCompare(){
-		List<Student> studentList = new ArrayList<Student>();
-		studentList.add(new Student("fei",12));
-		studentList.add(new Student("fei",12));
-		System.out.println("排序前--"+studentList);
-		//固定排序---根据comparable接口的compareTo
-		Collections.sort(studentList);
-		System.out.println("排序后--"+studentList);
-	}
+
 	
 }
