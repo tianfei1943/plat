@@ -13,8 +13,29 @@
 		<org.aspectj-version>1.6.10</org.aspectj-version>
 		<org.slf4j-version>1.6.6</org.slf4j-version>
 		<jackson.version>2.4.0</jackson.version>
+		<jackson.version>2.4.0</jackson.version>
+		<metadata.version>2.7.2</metadata.version>
 	</properties>
 	<dependencies>
+		<!-- img extif -->
+		<dependency>
+			<groupId>com.drewnoakes</groupId>
+			<artifactId>metadata-extractor</artifactId>
+			<version>${metadata.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>jmagick</groupId>
+			<artifactId>jmagick</artifactId>
+			<version>6.6.9</version>
+		</dependency> 
+		
+		<dependency>
+			<groupId>org.im4java</groupId>
+			<artifactId>im4java</artifactId>
+			<version>1.4.0</version>
+		</dependency>
+				
+		
 		<!-- Spring -->
 		<dependency>
 			<groupId>org.springframework</groupId>
