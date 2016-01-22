@@ -215,8 +215,8 @@ public class ImageUtil {
 		//System.out.println(tool.getImageInfo("c:\\IMG_20160111_135957.jpg"));
 		//tool.auto("c:\\IMG_20160111_135957.jpg", "c:\\IMG_20160111_135957-1.jpg");
 		//tool.zoomImage(1000, 1000,"c:\\tian_2.png" , "c:\\tian_2-1.png");
-		//System.out.println(tool.getImageInfo("/Users/fei/Desktop/IMG/tian_1.png"));
+		System.out.println(tool.getImageInfo("/Users/fei/Desktop/IMG/33.png"));
 		//tool.addImgText("/Users/fei/Desktop/IMG/tian_1.png", "ttt");
-		tool.waterMark("/Users/fei/Desktop/IMG/gao_1.png","/Users/fei/Desktop/IMG/tian_1.png","/Users/fei/Desktop/IMG/tian_1-1.png","southeast", 100);
+		//tool.waterMark("/Users/fei/Desktop/IMG/gao_1.png","/Users/fei/Desktop/IMG/tian_1.png","/Users/fei/Desktop/IMG/tian_1-1.png","southeast", 100);
 	}
 }
