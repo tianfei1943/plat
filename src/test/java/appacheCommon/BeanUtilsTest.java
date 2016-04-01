@@ -22,7 +22,6 @@ public class BeanUtilsTest {
 		System.out.println(o1);
 		
 		System.out.println(DateFormatUtils.format(DateUtils.truncate(new Date(), Calendar.MONTH),"yyyyMMdd HH:mm:ss"));
-		
 	}
 
 }

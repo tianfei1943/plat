@@ -59,7 +59,7 @@ public class TestClient {
 	public void testGet() throws ClientProtocolException, IOException {
 		HttpClient httpclient = new DefaultHttpClient();
 		HttpGet httpget = new HttpGet(
-				"http://localhost/easy/demo/datagrid/datagrid_data.json");
+				"http://192.168.3.62/easy/demo/datagrid/datagrid_data.json");
 		HttpResponse response = httpclient.execute(httpget);
 		HttpEntity entity = response.getEntity();
 		if (entity != null) {
