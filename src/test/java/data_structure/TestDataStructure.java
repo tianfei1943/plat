@@ -1,5 +1,7 @@
 package data_structure;
 
+import java.util.LinkedList;
+
 import org.junit.Test;
 
 import data_structure.deque.PersonDeque;
@@ -42,6 +44,11 @@ public class TestDataStructure {
 			System.out.println(s.getName());
 		}
 		
+	}
+	
+	@Test
+	public static void testLink(){
+		LinkedList<Person> list = new LinkedList<Person>();
 	}
 
 }
