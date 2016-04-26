@@ -1,22 +1,28 @@
 package imageDraw;
 
 import java.awt.Color;
+import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
+import java.awt.font.FontRenderContext;
+import java.awt.geom.AffineTransform;
+import java.awt.geom.Rectangle2D;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.util.Date;
 import java.util.Random;
+
+import org.apache.commons.lang3.StringUtils;
 
 public abstract class AbstractImageCreator {
 	private static Random rnd = new Random(new Date().getTime());
 	private Drawer drawer;
 
 	// 图片宽度
-	private int width = 200;
+	private int width;
 
 	// 图片高度
-	private int height = 80;
+	private int height;
 
 	// 外框颜色
 	private Color rectColor;
@@ -46,8 +52,6 @@ public abstract class AbstractImageCreator {
 
 	// 缩放
 	private double scale = 1;
-
-	// ##### 此处省略getter、setter方法 #####
 
 	public AbstractImageCreator(Drawer drawer) {
 		this.drawer = drawer;
@@ -86,10 +90,31 @@ public abstract class AbstractImageCreator {
 
 		return new Color(red, green, blue);
 	}
+	/**
+	 * 如果不设置高度和宽度，则自动算出
+	 * @param text
+	 */
+	private void generateWithAndHeight(String text){
+		String[] strArr = StringUtils.split(text,"\n");
+		String str = "";
+		for(int i=0;i<strArr.length;i++){
+			if(str.length()<strArr[i].length()){
+				str = strArr[i];
+			}
+		}
+		Font font = new Font(str, Font.PLAIN,fontSize);
+		Rectangle2D r2 = font.getStringBounds(str, new FontRenderContext(
+				AffineTransform.getScaleInstance(1, 1), false, false));
+		int unitHeight = (int) Math.floor(r2.getHeight())+5;// 把单个字符的高度+3，保证容纳
+		this.width = (int) Math.round(r2.getWidth()) + 20;//宽度+20
+		this.height = unitHeight*strArr.length;//单元高度*数组的长度
+	}
 
 	public void generateImage(String text) throws IOException {
-		BufferedImage image = new BufferedImage(width, height,
-				BufferedImage.TYPE_INT_RGB);
+		if(width == 0 || height == 0){
+			generateWithAndHeight(text);
+		}
+		BufferedImage image = new BufferedImage(width, height,BufferedImage.TYPE_INT_RGB);
 
 		if (rectColor == null)
 			rectColor = new Color(0, 0, 0);
