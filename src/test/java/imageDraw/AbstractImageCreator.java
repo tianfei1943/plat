@@ -43,7 +43,7 @@ public abstract class AbstractImageCreator {
 	private String fontName = "宋体";
 
 	// 字体大小
-	private int fontSize = 15;
+	private int fontSize = 18;
 
 	// 文字旋转的弧度数
 	private double radian = 0;
