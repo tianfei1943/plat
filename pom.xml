@@ -15,8 +15,22 @@
 		<jackson.version>2.4.0</jackson.version>
 		<jackson.version>2.4.0</jackson.version>
 		<metadata.version>2.7.2</metadata.version>
+		<javamail.version>1.4.5</javamail.version>
+		<commons-pool.version>1.6</commons-pool.version>
 	</properties>
 	<dependencies>
+		<dependency>
+			<groupId>javax.mail</groupId>
+			<artifactId>mail</artifactId>
+			<version>${javamail.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>commons-pool</groupId>
+			<artifactId>commons-pool</artifactId>
+			<version>${commons-pool.version}</version>
+			<optional>true</optional>
+			<scope>provided</scope>
+		</dependency>
 		<!-- img extif -->
 		<dependency>
 			<groupId>com.drewnoakes</groupId>
@@ -48,6 +62,12 @@
 					<artifactId>commons-logging</artifactId>
 				 </exclusion>
 			</exclusions>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.springframework.data</groupId>
+			<artifactId>spring-data-jpa</artifactId>
+			<version>1.6.0.RELEASE</version>
 		</dependency>
 		<!-- spring-mvc -->
 		<dependency>
