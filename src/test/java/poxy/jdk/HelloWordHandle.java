@@ -1,7 +1,8 @@
-package poxy;
+package poxy.jdk;
 
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
+import java.lang.reflect.Proxy;
 
 /**
  * 实现在方法调用前后向控制台输出两句字符串
@@ -12,10 +13,10 @@ public class HelloWordHandle implements InvocationHandler {
 
 	//要代理的原始对象
 	private Object object;
-
-	public HelloWordHandle(Object object) {
-		super();
+	
+	public Object getProxyObject(Object object){
 		this.object = object;
+		return Proxy.newProxyInstance(object.getClass().getClassLoader(), object.getClass().getInterfaces(), this);
 	}
 
 	/**
@@ -34,6 +35,7 @@ public class HelloWordHandle implements InvocationHandler {
 		result = method.invoke(object, args);
 		//调用之后
 		this.after();
+//		System.out.println();
 		return result;
 	}
 	

@@ -1,4 +1,4 @@
-package poxy;
+package poxy.jdk;
 
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Proxy;
@@ -9,10 +9,9 @@ public class ProxyTest {
 
 	@Test
 	public void test() {
-		IHelloWrod helloWord = new HelloWord();
-		InvocationHandler h = new HelloWordHandle(helloWord);
+		HelloWordHandle h = new HelloWordHandle();
 		//创建动态代理对象
-		IHelloWrod proxy = (IHelloWrod)Proxy.newProxyInstance(helloWord.getClass().getClassLoader(), helloWord.getClass().getInterfaces(), h);
+		IHelloWrod proxy = (IHelloWrod)h.getProxyObject(new HelloWord());
 		int x = proxy.sayHelloWord("tian");
 		System.out.println(x);
 		

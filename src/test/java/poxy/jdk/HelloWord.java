@@ -1,4 +1,4 @@
-package poxy;
+package poxy.jdk;
 
 public class HelloWord implements IHelloWrod {
 
