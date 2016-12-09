@@ -19,7 +19,7 @@ public class Template{
 			+"ORDER_NO,CARD_LOGO,IS_CONFIRMED,CONFIRMED_COUNT,MSG,CREATETIME,UPDATETIME"
 			+",FIELD1,FIELD2,FIELD3,OPEN_ID,USER_ID) values("
 			+"?,"  //订单号
-			+"'080_080_010_0111',"  //080_080_010_0111
+			+"'080|080',"  //卡种
 			+"'0',"   //0
 			+"'0',"  //0
 			+"NULL,"
