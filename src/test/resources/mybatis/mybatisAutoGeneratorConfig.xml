@@ -49,7 +49,7 @@
 
 		<javaClientGenerator targetPackage="test.mapper"  targetProject="plat" type="XMLMAPPER" />
 
-		<table tableName="zmxy_order_notice" domainObjectName="zmxyOrderNotice" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+		<table tableName="user" domainObjectName="User" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
 		</table>
 	</context>
 </generatorConfiguration>

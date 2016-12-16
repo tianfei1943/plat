@@ -33,7 +33,7 @@ if (!empty($this->item->pagination) AND $this->item->pagination && !$this->item-
  ?>
 
 <?php if ($params->get('show_title')) : ?>
-	<h2>
+	<h2 class="article-title">
 	<?php if ($params->get('link_titles') && !empty($this->item->readmore_link)) : ?>
 		<a href="<?php echo $this->item->readmore_link; ?>">
 		<?php echo $this->escape($this->item->title); ?></a>
@@ -84,11 +84,11 @@ endif; ?>
 	or ($params->get('show_hits'))); ?>
 
 <?php if ($useDefList) : ?>
-	<dl class="article-info">
-	<dt class="article-info-term"><?php  echo JText::_('COM_CONTENT_ARTICLE_INFO'); ?></dt>
+	<div class="article-info">
+	<span class="article-info-term"><?php  echo JText::_('COM_CONTENT_ARTICLE_INFO'); ?></span>
 <?php endif; ?>
 <?php if ($params->get('show_parent_category') && $this->item->parent_slug != '1:root') : ?>
-	<dd class="parent-category-name">
+	<span class="parent-category-name">
 	<?php	$title = $this->escape($this->item->parent_title);
 	$url = '<a href="'.JRoute::_(ContentHelperRoute::getCategoryRoute($this->item->parent_slug)).'">'.$title.'</a>';?>
 	<?php if ($params->get('link_parent_category') and $this->item->parent_slug) : ?>
@@ -96,10 +96,10 @@ endif; ?>
 	<?php else : ?>
 		<?php echo JText::sprintf('COM_CONTENT_PARENT', $title); ?>
 	<?php endif; ?>
-	</dd>
+	</span>
 <?php endif; ?>
 <?php if ($params->get('show_category')) : ?>
-	<dd class="category-name">
+	<span class="category-name">
 	<?php 	$title = $this->escape($this->item->category_title);
 	$url = '<a href="'.JRoute::_(ContentHelperRoute::getCategoryRoute($this->item->catslug)).'">'.$title.'</a>';?>
 	<?php if ($params->get('link_category') and $this->item->catslug) : ?>
@@ -107,25 +107,25 @@ endif; ?>
 	<?php else : ?>
 		<?php echo JText::sprintf('COM_CONTENT_CATEGORY', $title); ?>
 	<?php endif; ?>
-	</dd>
+	</span>
 <?php endif; ?>
 <?php if ($params->get('show_create_date')) : ?>
-	<dd class="create">
+	<span class="create">
 	<?php echo JText::sprintf('COM_CONTENT_CREATED_DATE_ON', JHtml::_('date', $this->item->created, JText::_('DATE_FORMAT_LC2'))); ?>
-	</dd>
+	</span>
 <?php endif; ?>
 <?php if ($params->get('show_modify_date')) : ?>
-	<dd class="modified">
+	<span class="modified">
 	<?php echo JText::sprintf('COM_CONTENT_LAST_UPDATED', JHtml::_('date', $this->item->modified, JText::_('DATE_FORMAT_LC2'))); ?>
-	</dd>
+	</span>
 <?php endif; ?>
 <?php if ($params->get('show_publish_date')) : ?>
-	<dd class="published">
+	<span class="published">
 	<?php echo JText::sprintf('COM_CONTENT_PUBLISHED_DATE_ON', JHtml::_('date', $this->item->publish_up, JText::_('DATE_FORMAT_LC2'))); ?>
-	</dd>
+	</span>
 <?php endif; ?>
 <?php if ($params->get('show_author') && !empty($this->item->author )) : ?>
-	<dd class="createdby">
+	<span class="createdby">
 	<?php $author = $this->item->created_by_alias ? $this->item->created_by_alias : $this->item->author; ?>
 	<?php if (!empty($this->item->contactid) && $params->get('link_author') == true): ?>
 	<?php
@@ -138,15 +138,15 @@ endif; ?>
 	<?php else: ?>
 		<?php echo JText::sprintf('COM_CONTENT_WRITTEN_BY', $author); ?>
 	<?php endif; ?>
-	</dd>
+	</span>
 <?php endif; ?>
 <?php if ($params->get('show_hits')) : ?>
-	<dd class="hits">
+	<span class="hits">
 	<?php echo JText::sprintf('COM_CONTENT_ARTICLE_HITS', $this->item->hits); ?>
-	</dd>
+	</span>
 <?php endif; ?>
 <?php if ($useDefList) : ?>
-	</dl>
+	</div>
 <?php endif; ?>
 
 <?php if (isset ($this->item->toc)) : ?>
@@ -174,10 +174,12 @@ if (!empty($this->item->pagination) AND $this->item->pagination AND !$this->item
 	echo $this->item->pagination;
  endif;
 ?>
+<div class="article-content">
 <?php echo $this->item->text; ?>
+</div>
 <?php
 if (!empty($this->item->pagination) AND $this->item->pagination AND $this->item->paginationposition AND!$this->item->paginationrelative):
-	 echo $this->item->pagination;?>
+	// echo $this->item->pagination;?>
 <?php endif; ?>
 
 <?php if (isset($urls) AND ((!empty($urls->urls_position)  AND ($urls->urls_position=='1')) OR ( $params->get('urls_position')=='1') )): ?>
@@ -212,7 +214,7 @@ if (!empty($this->item->pagination) AND $this->item->pagination AND $this->item-
 <?php endif; ?>
 <?php
 if (!empty($this->item->pagination) AND $this->item->pagination AND $this->item->paginationposition AND $this->item->paginationrelative):
-	 echo $this->item->pagination;?>
+	// echo $this->item->pagination;?>
 <?php endif; ?>
 
 <?php echo $this->item->event->afterDisplayContent; ?>

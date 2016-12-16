@@ -12,7 +12,7 @@ $lang = JFactory::getLanguage();
 $upper_limit = $lang->getUpperLimitSearchWord();
 ?>
 
-<form id="searchForm" action="<?php echo JRoute::_('index.php?option=com_search');?>" method="post">
+<form style="display: none" id="searchForm" action="<?php echo JRoute::_('index.php?option=com_search');?>" method="post">
 
 	<fieldset class="word">
 		<label for="search-searchword">
@@ -23,13 +23,13 @@ $upper_limit = $lang->getUpperLimitSearchWord();
 		<input type="hidden" name="task" value="search" />
 	</fieldset>
 
-	<div class="searchintro<?php echo $this->params->get('pageclass_sfx'); ?>">
+	<div style="display: none" class="searchintro<?php echo $this->params->get('pageclass_sfx'); ?>">
 		<?php if (!empty($this->searchword)):?>
 		<p><?php echo JText::plural('COM_SEARCH_SEARCH_KEYWORD_N_RESULTS', $this->total);?></p>
 		<?php endif;?>
 	</div>
 
-	<fieldset class="phrases">
+	<fieldset class="phrases" style="display: none">
 		<legend><?php echo JText::_('COM_SEARCH_FOR');?>
 		</legend>
 			<div class="phrases-box">
@@ -44,7 +44,7 @@ $upper_limit = $lang->getUpperLimitSearchWord();
 	</fieldset>
 
 	<?php if ($this->params->get('search_areas', 1)) : ?>
-		<fieldset class="only">
+		<fieldset class="only" style="display: none">
 		<legend><?php echo JText::_('COM_SEARCH_SEARCH_ONLY');?></legend>
 		<?php foreach ($this->searchareas['search'] as $val => $txt) :
 			$checked = is_array($this->searchareas['active']) && in_array($val, $this->searchareas['active']) ? 'checked="checked"' : '';
@@ -59,7 +59,7 @@ $upper_limit = $lang->getUpperLimitSearchWord();
 
 <?php if ($this->total > 0) : ?>
 
-	<div class="form-limit">
+	<div class="form-limit" style="display: none">
 		<label for="limit">
 			<?php echo JText::_('JGLOBAL_DISPLAY_NUM'); ?>
 		</label>

@@ -19,8 +19,8 @@ JHtml::_('behavior.keepalive');
 				<label id="mod-login-password-lbl" for="mod-login-password"><?php echo JText::_('JGLOBAL_PASSWORD'); ?></label>
 				<input name="passwd" id="mod-login-password" type="password" class="inputbox" size="15" />
 
-				<label id="mod-login-language-lbl" for="lang"><?php echo JText::_('MOD_LOGIN_LANGUAGE'); ?></label>
-				<?php echo $langs; ?>
+				<label style="display: none" id="mod-login-language-lbl" for="lang"><?php echo JText::_('MOD_LOGIN_LANGUAGE'); ?></label>
+				<?php //echo $langs; ?>
 
 				<div class="button-holder">
 					<div class="button1">
