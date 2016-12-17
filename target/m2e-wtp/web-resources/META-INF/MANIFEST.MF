@@ -1,5 +1,13 @@
+<<<<<<< HEAD
 Manifest-Version: 1.0
 Build-Jdk: 1.7.0_80
 Built-By: fei
 Created-By: Maven Integration for Eclipse
 
+=======
+Manifest-Version: 1.0
+Built-By: uatft90931
+Build-Jdk: 1.8.0_111
+Created-By: Maven Integration for Eclipse
+
+>>>>>>> FETCH_HEAD
