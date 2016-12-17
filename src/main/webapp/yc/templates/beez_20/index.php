@@ -79,7 +79,7 @@ foreach($items as $key=> $item){
         <div class="wp">
             <jdoc:include type="modules" name="position-0" />
             <span class="today">今天是 2016/06/16 星期四</span>
-            <div class="notice"><span class="lb">通知：</span><div class="notices-wrap">
+            <div class="notice"><span class="lb">通知：</span><div class="notices-wrap" style="width:480px">
                 <ul class="notices">
                     <!-- <li><a href="#">全国职业教育集团化办学工作专家组工作会议安排！</a></li>
                     <li><a href="#">全国职业教育集团化办学工作专家组工作会议安排！</a></li>
