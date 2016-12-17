@@ -280,8 +280,8 @@ foreach($items as $key=> $item){
 		<div class="home-row">
 			<div class="home-col home-col-s">
 				<div class="mod mod-s mod-mssq">
-					<a href="#" class="video"><img src="templates/beez_20/img/video.jpg" alt=""></a>
-					<a href="#" class="title">名师视频教学</a>
+					<a href="<?php echo JRoute::_("index.php?option=com_content&view=article&id=85:2016-12-05-11-06-24&catid=90&Itemid=480");?>" class="video"><img src="templates/beez_20/img/video.jpg" alt=""></a>
+					<a href="<?php echo JRoute::_("index.php?option=com_content&view=category&id=90&Itemid=480");?>" class="title">业内专家视频教学</a>
 				</div>
 			</div>
 			<div class="home-col home-col-m">
