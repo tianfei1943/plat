@@ -65,13 +65,11 @@
 		</dependency>
 		
 		<dependency>
-<<<<<<< HEAD
 			<groupId>org.springframework.data</groupId>
 			<artifactId>spring-data-jpa</artifactId>
 			<version>1.6.0.RELEASE</version>
 		</dependency>
-		<!-- spring-mvc -->
-=======
+		<dependency>
 			<groupId>org.mybatis</groupId>
 			<artifactId>mybatis</artifactId>
 			<version>3.2.0</version>
@@ -93,7 +91,6 @@
 			<artifactId>spring-web</artifactId>
 			<version>${spring.version}</version>
 		</dependency>
->>>>>>> FETCH_HEAD
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-webmvc</artifactId>
@@ -130,14 +127,12 @@
 			<artifactId>spring-beans</artifactId>
 			<version>${spring.version}</version>
 		</dependency>
-<<<<<<< HEAD
 		
 		<dependency>
 			<groupId>org.apache.httpcomponents</groupId>
 			<artifactId>httpclient</artifactId>
 			<version>4.3.6</version>
 		</dependency>
-=======
 		<dependency>
 			<groupId>cglib</groupId>
 			<artifactId>cglib-nodep</artifactId>
@@ -148,10 +143,7 @@
 			<artifactId>spring-aop</artifactId>
 			<version>${spring.version}</version>
 		</dependency>
-
->>>>>>> FETCH_HEAD
-		
-				
+	
 		<!-- AspectJ -->
 		<dependency>
 			<groupId>org.aspectj</groupId>
@@ -179,7 +171,6 @@
 		</dependency>
 		
 		<dependency>
-<<<<<<< HEAD
 			<groupId>org.apache.commons</groupId>
 			<artifactId>commons-compress</artifactId>
 			<version>1.9</version>
@@ -189,11 +180,11 @@
 			<groupId>commons-io</groupId>
 			<artifactId>commons-io</artifactId>
 			<version>2.4</version>
-=======
+		</dependency>	
+		<dependency>
 		    <groupId>org.dom4j</groupId>
 		    <artifactId>dom4j</artifactId>
 		    <version>2.0.0</version>
->>>>>>> FETCH_HEAD
 		</dependency>
 		
 		<!-- Logging -->
@@ -314,15 +305,12 @@
 			<artifactId>junit</artifactId>
 			<version>4.7</version>
 			<scope>test</scope>
-<<<<<<< HEAD
 		</dependency>
 		<dependency>
 			<groupId>org.easymock</groupId>
 			<artifactId>easymock</artifactId>
 			<version>3.4</version>
 		</dependency>        
-=======
-		</dependency>   
 		
 		
 		<dependency>
@@ -349,7 +337,6 @@
             <version>2.7.3</version>
         </dependency>
 		     
->>>>>>> FETCH_HEAD
 	</dependencies>
     <build>
     	<finalName>plat</finalName>
