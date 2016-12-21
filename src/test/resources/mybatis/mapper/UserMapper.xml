@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="mybatis" >
-  <resultMap id="BaseResultMap" type="mybatis.User" >
+<mapper namespace="mybatis.mapper.UserMapper" >
+  <resultMap id="BaseResultMap" type="mybatis.model.User" >
     <id column="USER_ID" property="userId" jdbcType="INTEGER" />
     <result column="USER_NAME" property="userName" jdbcType="VARCHAR" />
     <result column="USER_ADDRESS" property="userAddress" jdbcType="VARCHAR" />
@@ -19,13 +19,13 @@
     delete from user
     where USER_ID = #{userId,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="mybatis.User" >
-    insert into user (USER_ID, USER_NAME, USER_ADDRESS
+  <insert id="insert" parameterType="mybatis.model.User" >
+    insert into user (USER_NAME, USER_ADDRESS
       )
-    values (#{userId,jdbcType=INTEGER}, #{userName,jdbcType=VARCHAR}, #{userAddress,jdbcType=VARCHAR}
+    values (#{userName,jdbcType=VARCHAR}, #{userAddress,jdbcType=VARCHAR}
       )
   </insert>
-  <insert id="insertSelective" parameterType="mybatis.User" >
+  <insert id="insertSelective" parameterType="mybatis.model.User" >
     insert into user
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="userId != null" >
@@ -50,7 +50,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="mybatis.User" >
+  <update id="updateByPrimaryKeySelective" parameterType="mybatis.model.User" >
     update user
     <set >
       <if test="userName != null" >
@@ -62,7 +62,7 @@
     </set>
     where USER_ID = #{userId,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="mybatis.User" >
+  <update id="updateByPrimaryKey" parameterType="mybatis.model.User" >
     update user
     set USER_NAME = #{userName,jdbcType=VARCHAR},
       USER_ADDRESS = #{userAddress,jdbcType=VARCHAR}
